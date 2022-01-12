@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div ng-app="myApp" ng-controller="tableCtrl" class="container">
+      <h1>{{ title }}</h1>
+      <form>
+        <div class="form-inline mb-4">
+            Title: <input class="form-control ml-2 mr-2"  name="title" type="text" (keyup)="titleFieldData($event)" [(ngModel)]="titleField"/> 
+            Author: <input class="form-control ml-2 mr-3" name="author" type="text" (keyup)="authorFieldData($event)" [(ngModel)]="authorField"/>
+            <button type="button" class="btn btn-primary" (click)="onFormSubmit()"><span *ngIf="editRecord;">Edit</span><span *ngIf="!editRecord;">Create</span></button>
+        </div>
+      </form>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <td scope="col">Id</td>
+              <td scope="col">Title</td>
+              <td scope="col">Author</td>
+              <td scope="col">Edit</td>
+              <td scope="col">Delete</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of apiData">
+              <td>{{ item.id }}</td>
+              <td>{{ item.title }}</td>
+              <td>{{ item.author }}</td>
+              <td style="cursor: pointer; color: blue;" (click)="EditRecord(item.id)">Edit</td>
+              <td style="cursor: pointer; color: red;" (click)="deleteRecord(item.id)">Delete</td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  </body>
+</html>

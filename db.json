@@ -1,0 +1,28 @@
+{
+  "posts": [
+    {
+      "title": "R2",
+      "author": "A2",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "title": "R3 Updated",
+      "author": "A3 Updated"
+    },
+    {
+      "title": "R5",
+      "author": "A5",
+      "id": 5
+    },
+    {
+      "title": "New Record",
+      "author": "New Author ",
+      "id": 6
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
